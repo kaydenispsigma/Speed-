@@ -1,0 +1,16 @@
+local player = game.Players.Localplayer
+-- change the value its your speed
+local speed = 50
+-- default speed
+local defaultspeed = player.Humanoid.Character.WalkSpeed
+
+print("Default speed: "..defaultspeed)
+print("New Speed: "..speed)
+
+if defaultspeed == 0 then
+player.Humanoid.Character.WalkSpeed = 16
+else
+player.Humanoid.Character.WalkSpeed = defaultspeed
+end
+
+player.Humanoid.Character.WalkSpeed = speed
