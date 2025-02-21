@@ -1,24 +1,21 @@
-game:GetService("StartGui").Coregui("SendNotifcation", {
-    Title = "Speed Cheat"
-    Text = "Hello, this script was made by ughuhh09 on roblox which is rahh || Kayden on discord... i hope you like speeding irl cause you can go fast in roblox cya"
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Speed Cheat",
+    Text = "Hello, this script was made by ughuhh09 on Roblox (rahh || Kayden on Discord)... Enjoy speeding in-game!",
     Duration = 3
 })
 
-Task.wait(1)
+task.wait(1)
 
-local player = game.Players.Localplayer
--- change the value its your speed
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:FindFirstChildOfClass("Humanoid")
+
 local speed = 50
--- default speed
-local defaultspeed = player.Humanoid.WalkSpeed
+local defaultSpeed = humanoid and humanoid.WalkSpeed or 16
 
-print("Default speed: "..defaultspeed)
-print("New Speed: "..speed)
+print("Default speed: " .. defaultSpeed)
+print("New Speed: " .. speed)
 
-if defaultspeed == 0 then
-player.Humanoid.WalkSpeed = 16
-else
-player.Humanoid.WalkSpeed = defaultspeed
+if humanoid then
+    humanoid.WalkSpeed = speed
 end
-
-player.Humanoid.WalkSpeed = speed
